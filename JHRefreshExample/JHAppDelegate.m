@@ -7,6 +7,7 @@
 //
 
 #import "JHAppDelegate.h"
+#import "JHRefreshExampleViewController.h"
 
 @implementation JHAppDelegate
 
@@ -16,6 +17,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    JHRefreshExampleViewController *Vc = [[JHRefreshExampleViewController alloc] init];
+    self.window.rootViewController = Vc;
+    
     return YES;
 }
 

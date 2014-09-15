@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B76577719C672100098B394 /* JHRefreshCommonAniView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B76577619C672100098B394 /* JHRefreshCommonAniView.m */; };
+		9B76577919C679960098B394 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B76577819C679960098B394 /* arrow@2x.png */; };
+		9B76577C19C67AEE0098B394 /* JHRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B76577B19C67AEE0098B394 /* JHRefreshHeaderView.m */; };
+		9B76577F19C67E950098B394 /* JHRefreshAniBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B76577E19C67E950098B394 /* JHRefreshAniBaseView.m */; };
+		9B76578519C6B6C10098B394 /* UIView+JHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B76578419C6B6C00098B394 /* UIView+JHExtension.m */; };
+		9B76578819C6C17B0098B394 /* UIScrollView+JHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B76578719C6C17B0098B394 /* UIScrollView+JHExtension.m */; };
+		9B76578B19C6CE760098B394 /* JHRefreshExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B76578A19C6CE760098B394 /* JHRefreshExampleViewController.m */; };
+		9B76579019C6CFE00098B394 /* UIScrollView+JHRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B76578F19C6CFE00098B394 /* UIScrollView+JHRefresh.m */; };
 		9B8B174219C2850700A07333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174119C2850700A07333 /* Foundation.framework */; };
 		9B8B174419C2850700A07333 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174319C2850700A07333 /* CoreGraphics.framework */; };
 		9B8B174619C2850700A07333 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174519C2850700A07333 /* UIKit.framework */; };
@@ -19,6 +27,8 @@
 		9BE4029719C28699002A8F87 /* JHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4029219C28699002A8F87 /* JHAppDelegate.m */; };
 		9BE4029919C28699002A8F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4029519C28699002A8F87 /* main.m */; };
 		9BE4029E19C288DA002A8F87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4029C19C288DA002A8F87 /* InfoPlist.strings */; };
+		9BE402AC19C2A5C2002A8F87 /* JHRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE402A819C2A5C2002A8F87 /* JHRefreshBaseView.m */; };
+		9BE402AD19C2A5C2002A8F87 /* JHRefreshConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE402AA19C2A5C2002A8F87 /* JHRefreshConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +42,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B76577319C6705A0098B394 /* JHRefreshViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHRefreshViewDelegate.h; sourceTree = "<group>"; };
+		9B76577519C672100098B394 /* JHRefreshCommonAniView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshCommonAniView.h; sourceTree = "<group>"; };
+		9B76577619C672100098B394 /* JHRefreshCommonAniView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshCommonAniView.m; sourceTree = "<group>"; };
+		9B76577819C679960098B394 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		9B76577A19C67AEE0098B394 /* JHRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshHeaderView.h; sourceTree = "<group>"; };
+		9B76577B19C67AEE0098B394 /* JHRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshHeaderView.m; sourceTree = "<group>"; };
+		9B76577D19C67E950098B394 /* JHRefreshAniBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshAniBaseView.h; sourceTree = "<group>"; };
+		9B76577E19C67E950098B394 /* JHRefreshAniBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshAniBaseView.m; sourceTree = "<group>"; };
+		9B76578319C6B6C00098B394 /* UIView+JHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JHExtension.h"; sourceTree = "<group>"; };
+		9B76578419C6B6C00098B394 /* UIView+JHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JHExtension.m"; sourceTree = "<group>"; };
+		9B76578619C6C17B0098B394 /* UIScrollView+JHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JHExtension.h"; sourceTree = "<group>"; };
+		9B76578719C6C17B0098B394 /* UIScrollView+JHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JHExtension.m"; sourceTree = "<group>"; };
+		9B76578919C6CE760098B394 /* JHRefreshExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshExampleViewController.h; sourceTree = "<group>"; };
+		9B76578A19C6CE760098B394 /* JHRefreshExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshExampleViewController.m; sourceTree = "<group>"; };
+		9B76578D19C6CEFA0098B394 /* JHRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHRefresh.h; sourceTree = "<group>"; };
+		9B76578E19C6CFE00098B394 /* UIScrollView+JHRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JHRefresh.h"; sourceTree = "<group>"; };
+		9B76578F19C6CFE00098B394 /* UIScrollView+JHRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JHRefresh.m"; sourceTree = "<group>"; };
 		9B8B173E19C2850700A07333 /* JHRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JHRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8B174119C2850700A07333 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B8B174319C2850700A07333 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +75,11 @@
 		9BE4029419C28699002A8F87 /* JHRefresh-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JHRefresh-Prefix.pch"; sourceTree = "<group>"; };
 		9BE4029519C28699002A8F87 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9BE4029D19C288DA002A8F87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9BE402A719C2A5C2002A8F87 /* JHRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshBaseView.h; sourceTree = "<group>"; };
+		9BE402A819C2A5C2002A8F87 /* JHRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshBaseView.m; sourceTree = "<group>"; };
+		9BE402A919C2A5C2002A8F87 /* JHRefreshConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshConfig.h; sourceTree = "<group>"; };
+		9BE402AA19C2A5C2002A8F87 /* JHRefreshConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshConfig.m; sourceTree = "<group>"; };
+		9BE402AB19C2A5C2002A8F87 /* JHRefreshMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +106,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B76577419C671E10098B394 /* AnimationView */ = {
+			isa = PBXGroup;
+			children = (
+				9B76577D19C67E950098B394 /* JHRefreshAniBaseView.h */,
+				9B76577E19C67E950098B394 /* JHRefreshAniBaseView.m */,
+				9B76577519C672100098B394 /* JHRefreshCommonAniView.h */,
+				9B76577619C672100098B394 /* JHRefreshCommonAniView.m */,
+			);
+			path = AnimationView;
+			sourceTree = "<group>";
+		};
 		9B8B173519C2850700A07333 = {
 			isa = PBXGroup;
 			children = (
+				9BE402A619C2A5C2002A8F87 /* JHRefresh */,
 				9B8B177019C2865000A07333 /* JHRefreshExample */,
-				9B8B174719C2850700A07333 /* JHRefresh */,
 				9B8B176019C2850800A07333 /* JHRefreshTests */,
 				9B8B174019C2850700A07333 /* Frameworks */,
 				9B8B173F19C2850700A07333 /* Products */,
@@ -105,13 +148,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9B8B174719C2850700A07333 /* JHRefresh */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = JHRefresh;
-			sourceTree = "<group>";
-		};
 		9B8B176019C2850800A07333 /* JHRefreshTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +171,8 @@
 			children = (
 				9BE4029119C28699002A8F87 /* JHAppDelegate.h */,
 				9BE4029219C28699002A8F87 /* JHAppDelegate.m */,
+				9B76578919C6CE760098B394 /* JHRefreshExampleViewController.h */,
+				9B76578A19C6CE760098B394 /* JHRefreshExampleViewController.m */,
 				9BE4029019C28699002A8F87 /* Images.xcassets */,
 				9BE4029A19C286B7002A8F87 /* Supporting Files */,
 			);
@@ -150,6 +188,30 @@
 				9BE4029419C28699002A8F87 /* JHRefresh-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BE402A619C2A5C2002A8F87 /* JHRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				9B76577819C679960098B394 /* arrow@2x.png */,
+				9B76578D19C6CEFA0098B394 /* JHRefresh.h */,
+				9BE402A719C2A5C2002A8F87 /* JHRefreshBaseView.h */,
+				9BE402A819C2A5C2002A8F87 /* JHRefreshBaseView.m */,
+				9B76577A19C67AEE0098B394 /* JHRefreshHeaderView.h */,
+				9B76577B19C67AEE0098B394 /* JHRefreshHeaderView.m */,
+				9BE402A919C2A5C2002A8F87 /* JHRefreshConfig.h */,
+				9BE402AA19C2A5C2002A8F87 /* JHRefreshConfig.m */,
+				9BE402AB19C2A5C2002A8F87 /* JHRefreshMacro.h */,
+				9B76578E19C6CFE00098B394 /* UIScrollView+JHRefresh.h */,
+				9B76578F19C6CFE00098B394 /* UIScrollView+JHRefresh.m */,
+				9B76578319C6B6C00098B394 /* UIView+JHExtension.h */,
+				9B76578419C6B6C00098B394 /* UIView+JHExtension.m */,
+				9B76578619C6C17B0098B394 /* UIScrollView+JHExtension.h */,
+				9B76578719C6C17B0098B394 /* UIScrollView+JHExtension.m */,
+				9B76577319C6705A0098B394 /* JHRefreshViewDelegate.h */,
+				9B76577419C671E10098B394 /* AnimationView */,
+			);
+			path = JHRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +292,7 @@
 			files = (
 				9BE4029E19C288DA002A8F87 /* InfoPlist.strings in Resources */,
 				9BE4029619C28699002A8F87 /* Images.xcassets in Resources */,
+				9B76577919C679960098B394 /* arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +311,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE402AC19C2A5C2002A8F87 /* JHRefreshBaseView.m in Sources */,
+				9B76577C19C67AEE0098B394 /* JHRefreshHeaderView.m in Sources */,
+				9B76578B19C6CE760098B394 /* JHRefreshExampleViewController.m in Sources */,
+				9B76578519C6B6C10098B394 /* UIView+JHExtension.m in Sources */,
+				9B76578819C6C17B0098B394 /* UIScrollView+JHExtension.m in Sources */,
+				9B76577F19C67E950098B394 /* JHRefreshAniBaseView.m in Sources */,
+				9B76577719C672100098B394 /* JHRefreshCommonAniView.m in Sources */,
+				9B76579019C6CFE00098B394 /* UIScrollView+JHRefresh.m in Sources */,
 				9BE4029919C28699002A8F87 /* main.m in Sources */,
 				9BE4029719C28699002A8F87 /* JHAppDelegate.m in Sources */,
+				9BE402AD19C2A5C2002A8F87 /* JHRefreshConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
