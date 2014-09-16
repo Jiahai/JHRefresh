@@ -25,7 +25,9 @@
 - (void)refreshViewBeginRefreshing;
 /**
  *  刷新结束
+ *
+ *  @param success 刷新是否成功
  */
-- (void)refreshViewEndRefreshing;
+- (void)refreshViewEndRefreshing:(BOOL)success;
 
 @end

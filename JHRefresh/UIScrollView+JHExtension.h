@@ -13,4 +13,7 @@
 @property (nonatomic, assign)   CGFloat jh_contentInsetBottom;
 @property (nonatomic, assign)   CGFloat jh_contentInsetLeft;
 @property (nonatomic, assign)   CGFloat jh_contentInsetRight;
+
+@property (nonatomic, assign)   CGFloat jh_contentSizeWidth;
+@property (nonatomic, assign)   CGFloat jh_contentSizeHeight;
 @end

@@ -14,6 +14,18 @@
 
 @implementation JHRefreshCommonAniView
 
+NSString *const JHRefreshHeaderStatusTextNormal = @"下拉刷新";
+NSString *const JHRefreshHeaderStatusTextPulling = @"松开既可刷新";
+NSString *const JHRefreshHeaderStatusTextRefreshing = @"正在刷新。。。";
+NSString *const JHRefreshHeaderStatusTextSuccess = @"刷新成功";
+NSString *const JHRefreshHeaderStatusTextFailure = @"刷新失败";
+
+NSString *const JHRefreshFooterStatusTextNormal = @"上拉加载更多";
+NSString *const JHRefreshFooterStatusTextPulling = @"松开既可加载";
+NSString *const JHRefreshFooterStatusTextRefreshing = @"正在加载。。。";
+NSString *const JHRefreshFooterStatusTextSuccess = @"加载成功";
+NSString *const JHRefreshFooterStatusTextFailure = @"加载失败";
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -27,7 +39,7 @@
         _statusLabel.backgroundColor = [UIColor clearColor];
         _statusLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_statusLabel];
-        _statusLabel.text = @"下拉可以刷新";
+        _statusLabel.text = JHRefreshHeaderStatusTextNormal;
         
         _lastUpdateTimeLabel = [[UILabel alloc] init];
         _lastUpdateTimeLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -36,7 +48,6 @@
         _lastUpdateTimeLabel.backgroundColor = [UIColor clearColor];
         _lastUpdateTimeLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_lastUpdateTimeLabel];
-        _lastUpdateTimeLabel.text = @"上次刷新：2014-10-11 08:00";
         
         _arrowImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
         _arrowImgView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
@@ -49,6 +60,17 @@
         
     }
     return self;
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    [super willMoveToSuperview:newSuperview];
+    
+    if(self.refreshViewType == JHRefreshViewTypeFooter)
+    {
+        _statusLabel.text = JHRefreshFooterStatusTextNormal;
+        _arrowImgView.transform = CGAffineTransformMakeRotation(M_PI);
+    }
 }
 
 - (void)layoutSubviews
@@ -68,27 +90,84 @@
 #pragma mark - JHRefreshViewDelegate
 - (void)refreshViewAniToBePulling
 {
-    _statusLabel.text = @"放开即可刷新~_-";
-    [UIView animateWithDuration:JHRefreshFastAnimationDuration animations:^{
-        _arrowImgView.transform = CGAffineTransformMakeRotation(M_PI);
-    }];
+    switch (self.refreshViewType) {
+        case JHRefreshViewTypeHeader:
+        {
+            _statusLabel.text = JHRefreshHeaderStatusTextPulling;
+            
+            [UIView animateWithDuration:JHRefreshFastAnimationDuration animations:^{
+                _arrowImgView.transform = CGAffineTransformMakeRotation(M_PI);
+            }];
+        }
+            break;
+        case JHRefreshViewTypeFooter:
+        {
+            _statusLabel.text = JHRefreshFooterStatusTextPulling;
+            
+            [UIView animateWithDuration:JHRefreshFastAnimationDuration animations:^{
+                _arrowImgView.transform = CGAffineTransformIdentity;
+            }];
+        }
+            break;
+    }
 }
 - (void)refreshViewAniToBeNormal
 {
-    _statusLabel.text = @"下拉可以刷新";
-    [UIView animateWithDuration:JHRefreshFastAnimationDuration animations:^{
-        _arrowImgView.transform = CGAffineTransformIdentity;
-    }];
+    switch (self.refreshViewType) {
+        case JHRefreshViewTypeHeader:
+        {
+            _statusLabel.text = JHRefreshHeaderStatusTextNormal;
+            
+            [UIView animateWithDuration:JHRefreshFastAnimationDuration animations:^{
+                _arrowImgView.transform = CGAffineTransformIdentity;
+            }];
+        }
+            break;
+        case JHRefreshViewTypeFooter:
+        {
+            _statusLabel.text = JHRefreshFooterStatusTextNormal;
+            
+            [UIView animateWithDuration:JHRefreshFastAnimationDuration animations:^{
+                _arrowImgView.transform = CGAffineTransformMakeRotation(M_PI);
+            }];
+        }
+            break;
+    }
 }
 - (void)refreshViewBeginRefreshing
 {
-    _statusLabel.text = @"正在加载。。。";
-    
+    switch (self.refreshViewType) {
+        case JHRefreshViewTypeHeader:
+        {
+            _statusLabel.text = JHRefreshHeaderStatusTextRefreshing;
+        }
+            break;
+        case JHRefreshViewTypeFooter:
+        {
+            _statusLabel.text = JHRefreshFooterStatusTextRefreshing;
+        }
+            break;
+    }
+    _arrowImgView.hidden = YES;
+    [_activityView startAnimating];
 }
 
-- (void)refreshViewEndRefreshing
+- (void)refreshViewEndRefreshing:(BOOL)success
 {
-    _statusLabel.text = @"加载结束!";
+    switch (self.refreshViewType) {
+        case JHRefreshViewTypeHeader:
+        {
+            _statusLabel.text = success ? JHRefreshHeaderStatusTextSuccess : JHRefreshHeaderStatusTextFailure;
+        }
+            break;
+        case JHRefreshViewTypeFooter:
+        {
+            _statusLabel.text = success ? JHRefreshFooterStatusTextSuccess : JHRefreshFooterStatusTextFailure;
+        }
+            break;
+    }
+    [_activityView stopAnimating];
+    _arrowImgView.hidden = NO;
 }
 
 /*

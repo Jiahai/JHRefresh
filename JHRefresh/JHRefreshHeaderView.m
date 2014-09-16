@@ -19,10 +19,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-//        self.scrollView.jh_contentInsetTop = -frame.size.height;
-        
     }
     return self;
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    [super willMoveToSuperview:newSuperview];
+    
+    self.jh_originY = -JHRefreshViewHeight;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -39,10 +44,10 @@
 - (void)changeStateWithContentOffset
 {
     CGFloat currentOffsetY = self.scrollView.contentOffset.y;
-    CGFloat releaseToRefreshOffsetY = self.scrollView.jh_contentInsetTop - self.jh_height;
+    CGFloat releaseToRefreshOffsetY = - self.jh_height;
     
     //headerView的顶端不可见时，直接返回
-    if(currentOffsetY>=self.scrollView.jh_contentInsetTop)
+    if(currentOffsetY>=0)
         return;
     
     if(self.scrollView.isDragging)
@@ -63,6 +68,16 @@
         //开始刷新
         self.state = JHRefreshStateRefreshing;
     }
+}
+
+- (void)setRefreshingContentInset
+{
+    self.scrollView.jh_contentInsetTop += JHRefreshViewHeight;
+}
+
+- (void)resumeContentInset
+{
+    self.scrollView.jh_contentInsetTop -= JHRefreshViewHeight;
 }
 
 /*

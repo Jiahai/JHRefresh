@@ -7,6 +7,8 @@
 //
 
 #import "JHRefreshAniBaseView.h"
+#import "JHRefreshHeaderView.h"
+#import "JHRefreshFooterView.h"
 
 @implementation JHRefreshAniBaseView
 
@@ -20,6 +22,38 @@
     }
     return self;
 }
+
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    if([newSuperview isKindOfClass:[JHRefreshHeaderView class]])
+    {
+        self.refreshViewType = JHRefreshViewTypeHeader;
+    }
+    else if([newSuperview isKindOfClass:[JHRefreshFooterView class]])
+    {
+        self.refreshViewType = JHRefreshViewTypeFooter;
+    }
+    [super willMoveToSuperview:newSuperview];
+}
+
+#pragma mark - JHRefreshViewDelegate
+- (void)refreshViewAniToBePulling
+{
+    
+}
+- (void)refreshViewAniToBeNormal
+{
+    
+}
+- (void)refreshViewBeginRefreshing
+{
+    
+}
+- (void)refreshViewEndRefreshing:(BOOL)success
+{
+    
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

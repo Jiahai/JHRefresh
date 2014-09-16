@@ -8,10 +8,12 @@
 
 #import "JHRefreshExampleViewController.h"
 #import "JHRefresh.h"
+#import "UIScrollView+JHExtension.h"
 
 @interface JHRefreshExampleViewController ()
-
+@property (nonatomic, assign) NSInteger count;
 @end
+
 
 @implementation JHRefreshExampleViewController
 
@@ -34,8 +36,42 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self.tableView addRefreshHeaderView:nil];
-
+    _count = 40;
+    
+    __weak JHRefreshExampleViewController *weakSelf = self;
+    [self.tableView addRefreshHeaderView:^{
+        
+        //延时隐藏refreshView;
+        double delayInSeconds = 2.0;
+        //创建延期的时间 2S
+        dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        //延期执行
+        dispatch_after(delayInNanoSeconds, dispatch_get_main_queue(), ^{
+            weakSelf.count =20;
+            
+            [weakSelf.tableView reloadData];
+            
+            [weakSelf.tableView headerEndRefreshing];
+        });
+        
+    }];
+    
+    [self.tableView addRefreshFooterView:^{
+        
+        //延时隐藏refreshView;
+        double delayInSeconds = 2.0;
+        //创建延期的时间 2S
+        dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        //延期执行
+        dispatch_after(delayInNanoSeconds, dispatch_get_main_queue(), ^{
+            weakSelf.count +=20;
+            
+            [weakSelf.tableView reloadData];
+            
+            [weakSelf.tableView footerEndRefreshing];
+        });
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +94,7 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     
-    return 10;
+    return _count;
 }
 
 

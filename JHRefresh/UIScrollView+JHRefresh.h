@@ -11,4 +11,9 @@
 @interface UIScrollView (JHRefresh)
 
 - (void)addRefreshHeaderView:(void(^)())beginRefresh;
+
+- (void)addRefreshFooterView:(void(^)())beginRefresh;
+
+- (void)headerEndRefreshing;
+- (void)footerEndRefreshing;
 @end

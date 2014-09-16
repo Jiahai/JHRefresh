@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "JHRefreshViewDelegate.h"
+#import "JHRefreshConfig.h"
 
 @interface JHRefreshAniBaseView : UIView<JHRefreshViewDelegate>
-
+@property (nonatomic, assign) JHRefreshViewType     refreshViewType;
 @end

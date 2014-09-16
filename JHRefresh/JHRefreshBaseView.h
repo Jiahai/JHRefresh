@@ -15,11 +15,6 @@ typedef NS_ENUM(NSInteger, JHRefreshState) {
     JHRefreshStateRefreshing
 };
 
-typedef NS_ENUM(NSInteger, JHRefreshViewType) {
-    JHRefreshViewTypeHeader     = 0,
-    JHRefreshViewTypeFooter
-};
-
 @interface JHRefreshBaseView : UIView
 @property (nonatomic, weak, readonly)       UIScrollView *scrollView;
 
@@ -33,4 +28,6 @@ typedef NS_ENUM(NSInteger, JHRefreshViewType) {
 @property (nonatomic, readonly)     BOOL    refreshing;
 
 + (instancetype)createView;
+
+- (void)endRefreshing;
 @end

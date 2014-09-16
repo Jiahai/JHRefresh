@@ -9,6 +9,7 @@
 #import "UIScrollView+JHExtension.h"
 
 @implementation UIScrollView (JHExtension)
+#pragma mark - contentInset
 - (CGFloat)jh_contentInsetTop
 {
     return self.contentInset.top;
@@ -48,5 +49,27 @@
     UIEdgeInsets inset = self.contentInset;
     inset.right = jh_contentInsetRight;
     self.contentInset = inset;
+}
+
+#pragma mark - contentSize
+- (CGFloat)jh_contentSizeWidth
+{
+    return self.contentSize.width;
+}
+- (void)setJh_contentSizeWidth:(CGFloat)jh_contentSizeWidth
+{
+    CGSize size = self.contentSize;
+    size.width = jh_contentSizeWidth;
+    self.contentSize = size;
+}
+- (CGFloat)jh_contentSizeHeight
+{
+    return self.contentSize.height;
+}
+- (void)setJh_contentSizeHeight:(CGFloat)jh_contentSizeHeight
+{
+    CGSize size = self.contentSize;
+    size.height = jh_contentSizeHeight;
+    self.contentSize = size;
 }
 @end

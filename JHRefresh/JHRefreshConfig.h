@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "JHRefreshMacro.h"
 
+
+typedef NS_ENUM(NSInteger, JHRefreshViewType) {
+    JHRefreshViewTypeHeader     = 1,
+    JHRefreshViewTypeFooter
+};
+
 extern const CGFloat JHRefreshViewHeight;
 extern const CGFloat JHRefreshFastAnimationDuration;
 extern const CGFloat JHRefreshSlowAnimationDuration;
