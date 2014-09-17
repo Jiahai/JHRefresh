@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JHRefreshConfig.h"
 
 @interface UIScrollView (JHRefresh)
 
@@ -14,6 +15,6 @@
 
 - (void)addRefreshFooterView:(void(^)())beginRefresh;
 
-- (void)headerEndRefreshing;
+- (void)headerEndRefreshingWithResult:(JHRefreshResult)result;
 - (void)footerEndRefreshing;
 @end

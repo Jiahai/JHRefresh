@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JHRefreshConfig.h"
 
 @protocol JHRefreshViewDelegate <NSObject>
 
@@ -16,7 +17,7 @@
  */
 - (void)refreshViewAniToBePulling;
 /**
- *  下拉状态变成普通状态时的动画
+ *  变成普通状态时的动画
  */
 - (void)refreshViewAniToBeNormal;
 /**
@@ -26,8 +27,16 @@
 /**
  *  刷新结束
  *
- *  @param success 刷新是否成功
+ *  @param result 刷新结果
  */
-- (void)refreshViewEndRefreshing:(BOOL)success;
+- (void)refreshViewEndRefreshing:(JHRefreshResult)result;
+
+@optional
+/**
+ *  拖拽到对应的位置
+ *
+ *  @param pos 位置，范围：1-JHRefreshViewHeight
+ */
+- (void)refreshViewPullingToPosition:(NSInteger)pos;
 
 @end

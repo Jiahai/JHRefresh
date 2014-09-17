@@ -10,6 +10,7 @@
 #import "JHRefreshHeaderView.h"
 #import "JHRefreshFooterView.h"
 #import "AnimationView/JHRefreshCommonAniView.h"
+#import "AnimationView/JHRefreshAmazingAniView.h"
 #import "objc/runtime.h"
 
 @interface UIScrollView()
@@ -52,7 +53,7 @@ static char JHRefreshFooterViewKey;
 {
     JHRefreshHeaderView *headerView = [JHRefreshHeaderView createView];
     headerView.beginRefreshingBlock = beginRefresh;
-    headerView.aniView = [[JHRefreshCommonAniView alloc] initWithFrame:headerView.bounds];
+    headerView.aniView = [[JHRefreshAmazingAniView alloc] initWithFrame:headerView.bounds];
     [self addSubview:headerView];
     
     self.header = headerView;
@@ -68,13 +69,13 @@ static char JHRefreshFooterViewKey;
     self.footer = footerView;
 }
 
-- (void)headerEndRefreshing
+- (void)headerEndRefreshingWithResult:(JHRefreshResult)result
 {
-    [self.header endRefreshing];
+    [self.header endRefreshingWithResult:result];
 }
 
 - (void)footerEndRefreshing
 {
-    [self.footer endRefreshing];
+    [self.footer endRefreshingWithResult:JHRefreshResultNone];
 }
 @end

@@ -12,6 +12,8 @@
 #import "UIView+JHExtension.h"
 
 @interface JHRefreshBaseView ()
+@property (nonatomic, assign)       JHRefreshResult    refreshResult; //刷新是否成功
+
 /**
  *  正在刷新时设置contentInset的值，header设置Top，footer设置bottom
  */
@@ -97,18 +99,30 @@
             if(state == JHRefreshStateNormal)
             {
                 //刷新状态转为普通状态
-                [_aniView refreshViewEndRefreshing:YES];
+                [_aniView refreshViewEndRefreshing:_refreshResult];
                 
-                //延时隐藏refreshView;
-                double delayInSeconds = 0.8;
-                //创建延期的时间
-                dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-                //延期执行
-                dispatch_after(delayInNanoSeconds, dispatch_get_main_queue(), ^{
-                    [UIView animateWithDuration:JHRefreshSlowAnimationDuration animations:^{
+                switch (_refreshResult) {
+                    case JHRefreshResultNone:
+                    {
                         [self resumeContentInset];
-                    }];
-                });
+                        [_aniView refreshViewAniToBeNormal];
+                    }
+                        break;
+                    case JHRefreshResultSuccess:
+                    case JHRefreshResultFailure:
+                    {
+                        //延时隐藏refreshView;
+                        dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, JHRefreshShowResultAnimationDuration * NSEC_PER_SEC);
+                        //延期执行
+                        dispatch_after(delayInNanoSeconds, dispatch_get_main_queue(), ^{
+                            [UIView animateWithDuration:JHRefreshSlowAnimationDuration animations:^{
+                                [self resumeContentInset];
+                                [_aniView refreshViewAniToBeNormal];
+                            }];
+                        });
+                    }
+                        break;
+                }
             }
         }
             break;
@@ -137,8 +151,9 @@
     }
 }
 
-- (void)endRefreshing
+- (void)endRefreshingWithResult:(JHRefreshResult)result
 {
+    self.refreshResult = result;
     self.state = JHRefreshStateNormal;
 }
 

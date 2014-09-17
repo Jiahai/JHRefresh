@@ -33,6 +33,9 @@
     {
         self.refreshViewType = JHRefreshViewTypeFooter;
     }
+    
+    self.refreshViewID = ((JHRefreshBaseView *)newSuperview).ID;
+    
     [super willMoveToSuperview:newSuperview];
 }
 

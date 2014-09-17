@@ -51,7 +51,7 @@
             
             [weakSelf.tableView reloadData];
             
-            [weakSelf.tableView headerEndRefreshing];
+            [weakSelf.tableView headerEndRefreshingWithResult:JHRefreshResultSuccess];
         });
         
     }];

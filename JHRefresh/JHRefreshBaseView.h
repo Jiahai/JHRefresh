@@ -16,6 +16,11 @@ typedef NS_ENUM(NSInteger, JHRefreshState) {
 };
 
 @interface JHRefreshBaseView : UIView
+/**
+ *  App中有多个refreshView时，用以存放不同的配置信息，如：lastUpdateTime，也可不填
+ */
+@property (nonatomic, assign)       NSInteger   ID;
+
 @property (nonatomic, weak, readonly)       UIScrollView *scrollView;
 
 @property (nonatomic, assign)       JHRefreshState  state;
@@ -29,5 +34,5 @@ typedef NS_ENUM(NSInteger, JHRefreshState) {
 
 + (instancetype)createView;
 
-- (void)endRefreshing;
+- (void)endRefreshingWithResult:(JHRefreshResult)result;
 @end

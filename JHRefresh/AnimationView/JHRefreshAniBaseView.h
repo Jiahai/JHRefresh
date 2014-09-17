@@ -11,5 +11,7 @@
 #import "JHRefreshConfig.h"
 
 @interface JHRefreshAniBaseView : UIView<JHRefreshViewDelegate>
-@property (nonatomic, assign) JHRefreshViewType     refreshViewType;
+@property (nonatomic, assign)   JHRefreshViewType   refreshViewType;
+@property (nonatomic, assign)   NSInteger           refreshViewID;
+
 @end

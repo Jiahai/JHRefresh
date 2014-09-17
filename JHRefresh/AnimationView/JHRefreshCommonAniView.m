@@ -48,6 +48,7 @@ NSString *const JHRefreshFooterStatusTextFailure = @"加载失败";
         _lastUpdateTimeLabel.backgroundColor = [UIColor clearColor];
         _lastUpdateTimeLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_lastUpdateTimeLabel];
+        _lastUpdateTimeLabel.text = [JHRefreshConfig getLastUpdateTimeWithRefreshViewID:self.refreshViewID];
         
         _arrowImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
         _arrowImgView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
@@ -70,6 +71,7 @@ NSString *const JHRefreshFooterStatusTextFailure = @"加载失败";
     {
         _statusLabel.text = JHRefreshFooterStatusTextNormal;
         _arrowImgView.transform = CGAffineTransformMakeRotation(M_PI);
+        _lastUpdateTimeLabel.hidden = YES;
     }
 }
 
@@ -152,20 +154,40 @@ NSString *const JHRefreshFooterStatusTextFailure = @"加载失败";
     [_activityView startAnimating];
 }
 
-- (void)refreshViewEndRefreshing:(BOOL)success
+- (void)refreshViewEndRefreshing:(JHRefreshResult)result
 {
     switch (self.refreshViewType) {
         case JHRefreshViewTypeHeader:
         {
-            _statusLabel.text = success ? JHRefreshHeaderStatusTextSuccess : JHRefreshHeaderStatusTextFailure;
+            switch (result) {
+                case JHRefreshResultNone:
+                    _statusLabel.text = JHRefreshHeaderStatusTextNormal;
+                    break;
+                case JHRefreshResultSuccess:
+                {
+                    _statusLabel.text = JHRefreshHeaderStatusTextSuccess;
+                }
+                    break;
+                case JHRefreshResultFailure:
+                {
+                    _statusLabel.text = JHRefreshHeaderStatusTextFailure;
+                }
+                    break;
+            }
+            
+            _arrowImgView.transform = CGAffineTransformIdentity;
         }
             break;
         case JHRefreshViewTypeFooter:
         {
-            _statusLabel.text = success ? JHRefreshFooterStatusTextSuccess : JHRefreshFooterStatusTextFailure;
+            _statusLabel.text = JHRefreshHeaderStatusTextNormal;
+            
+            _arrowImgView.transform = CGAffineTransformMakeRotation(M_PI);
         }
             break;
     }
+    _lastUpdateTimeLabel.text = [JHRefreshConfig getLastUpdateTimeWithRefreshViewID:self.refreshViewID];
+    [JHRefreshConfig updateLastUpdateTimeWithRefreshViewID:self.refreshViewID];
     [_activityView stopAnimating];
     _arrowImgView.hidden = NO;
 }

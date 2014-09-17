@@ -17,6 +17,9 @@
 #define JHLog(fmt, ...)
 #endif
 
+#define JHRefreshBundleName @"JHRefresh.bundle"
+#define JHRefreshSrcName(file) ([JHRefreshBundleName stringByAppendingPathComponent:(file)])
+
 
 #pragma mark  颜色配置
 #define JHRGBA(r,g,b,a) [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:a]
