@@ -46,6 +46,16 @@
     if([keyPath isEqualToString:JHRefreshContentOffset])
     {
         [self changeStateWithContentOffset];
+        
+        if([self.aniView respondsToSelector:@selector(refreshViewPullingToPosition:)])
+        {
+            NSInteger pos = self.scrollView.contentOffset.y + self.scrollView.jh_height - self.scrollView.jh_contentSizeHeight;
+            
+            if(pos <= 0 || pos > JHRefreshViewHeight)
+                return;
+            
+            [self.aniView refreshViewPullingToPosition:pos];
+        }
     }
 }
 

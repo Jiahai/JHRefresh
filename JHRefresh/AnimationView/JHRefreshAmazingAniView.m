@@ -55,14 +55,24 @@
  */
 - (void)refreshViewAniToBeNormal
 {
-    
+    [_aniImgView stopAnimating];
 }
 /**
  *  刷新开始
  */
 - (void)refreshViewBeginRefreshing
 {
-    
+    if(!_aniImgView.animationImages)
+    {
+        _aniImgView.animationImages = [NSArray arrayWithObjects:
+                                       [UIImage imageNamed:JHRefreshSrcName(@"dropdown_loading_01.png")],
+                                       [UIImage imageNamed:JHRefreshSrcName(@"dropdown_loading_02.png")],
+                                       [UIImage imageNamed:JHRefreshSrcName(@"dropdown_loading_03.png")],
+                                       nil];
+        _aniImgView.animationDuration = 0.6;
+        _aniImgView.animationRepeatCount = 0;
+    }
+    [_aniImgView startAnimating];
 }
 /**
  *  刷新结束
@@ -80,6 +90,10 @@
  */
 - (void)refreshViewPullingToPosition:(NSInteger)pos
 {
+    if(pos == 0)
+    {
+        return;
+    }
     CGFloat x = 1;
     CGPoint center = _aniImgView.center;
     

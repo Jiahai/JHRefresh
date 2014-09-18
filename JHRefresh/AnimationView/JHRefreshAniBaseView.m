@@ -52,7 +52,7 @@
 {
     
 }
-- (void)refreshViewEndRefreshing:(BOOL)success
+- (void)refreshViewEndRefreshing:(JHRefreshResult)result
 {
     
 }

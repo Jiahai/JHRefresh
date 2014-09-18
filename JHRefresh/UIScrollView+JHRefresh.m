@@ -63,7 +63,8 @@ static char JHRefreshFooterViewKey;
 {
     JHRefreshFooterView *footerView = [JHRefreshFooterView createView];
     footerView.beginRefreshingBlock = beginRefresh;
-    footerView.aniView = [[JHRefreshCommonAniView alloc] initWithFrame:footerView.bounds];
+//    footerView.aniView = [[JHRefreshCommonAniView alloc] initWithFrame:footerView.bounds];
+    footerView.aniView = [[JHRefreshAmazingAniView alloc] initWithFrame:footerView.bounds];
     [self addSubview:footerView];
     
     self.footer = footerView;

@@ -41,12 +41,12 @@
         
         if([self.aniView respondsToSelector:@selector(refreshViewPullingToPosition:)])
         {
-            NSInteger pos = abs(self.scrollView.contentOffset.y);
+            NSInteger pos = self.scrollView.contentOffset.y;
             
-            if(pos > JHRefreshViewHeight)
+            if(pos > 0 || pos < -JHRefreshViewHeight)
                 return;
             
-            [self.aniView refreshViewPullingToPosition:pos];
+            [self.aniView refreshViewPullingToPosition:abs(pos)];
         }
     }
 }
