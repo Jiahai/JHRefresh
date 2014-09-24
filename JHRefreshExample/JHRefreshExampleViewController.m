@@ -10,6 +10,7 @@
 #import "JHRefresh.h"
 #import "JHRefreshCommonExampleController.h"
 #import "JHRefreshAmazingExampleController.h"
+#import "JHRefreshCombineExampleController.h"
 
 @interface JHRefreshExampleViewController ()
 @property (nonatomic, assign) NSInteger count;
@@ -30,6 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: JHRGBA(245, 86, 74, 1)};
+    [self.navigationItem setTitle:@"JHRefresh"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -59,7 +63,7 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     
-    return 2;
+    return 3;
 }
 
 
@@ -84,6 +88,11 @@
             cell.textLabel.text = @"仿大众点评下拉刷新";
         }
             break;
+        case 2:
+        {
+            cell.textLabel.text = @"组合刷新";
+        }
+            break;
         default:
             break;
     }
@@ -102,6 +111,11 @@
         case 1:
         {
             [self.navigationController pushViewController:[[JHRefreshAmazingExampleController alloc] init] animated:YES];
+        }
+            break;
+        case 2:
+        {
+            [self.navigationController pushViewController:[[JHRefreshCombineExampleController alloc] init] animated:YES];
         }
             break;
         default:

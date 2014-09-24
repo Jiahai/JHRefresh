@@ -28,6 +28,7 @@
 		9B8B175D19C2850800A07333 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174519C2850700A07333 /* UIKit.framework */; };
 		9B8B176519C2850800A07333 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B176319C2850800A07333 /* InfoPlist.strings */; };
 		9B8B176719C2850800A07333 /* JHRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B176619C2850800A07333 /* JHRefreshTests.m */; };
+		9B925CDE19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */; };
 		9BE4029619C28699002A8F87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4029019C28699002A8F87 /* Images.xcassets */; };
 		9BE4029719C28699002A8F87 /* JHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4029219C28699002A8F87 /* JHAppDelegate.m */; };
 		9BE4029919C28699002A8F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4029519C28699002A8F87 /* main.m */; };
@@ -84,6 +85,8 @@
 		9B8B176219C2850800A07333 /* JHRefreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JHRefreshTests-Info.plist"; sourceTree = "<group>"; };
 		9B8B176419C2850800A07333 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9B8B176619C2850800A07333 /* JHRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHRefreshTests.m; sourceTree = "<group>"; };
+		9B925CDC19D2BDAD0048CE7F /* JHRefreshCombineExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshCombineExampleController.h; sourceTree = "<group>"; };
+		9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshCombineExampleController.m; sourceTree = "<group>"; };
 		9BE4029019C28699002A8F87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9BE4029119C28699002A8F87 /* JHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAppDelegate.h; sourceTree = "<group>"; };
 		9BE4029219C28699002A8F87 /* JHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAppDelegate.m; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				9B0F3A1A19CAC34600DE3DF9 /* JHRefreshCommonExampleController.m */,
 				9B0F3A1C19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.h */,
 				9B0F3A1D19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.m */,
+				9B925CDC19D2BDAD0048CE7F /* JHRefreshCombineExampleController.h */,
+				9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */,
 				9BE4029019C28699002A8F87 /* Images.xcassets */,
 				9BE4029A19C286B7002A8F87 /* Supporting Files */,
 			);
@@ -343,6 +348,7 @@
 				9B76578519C6B6C10098B394 /* UIView+JHExtension.m in Sources */,
 				9B76578819C6C17B0098B394 /* UIScrollView+JHExtension.m in Sources */,
 				9B0F3A1E19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.m in Sources */,
+				9B925CDE19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m in Sources */,
 				9B76577F19C67E950098B394 /* JHRefreshAniBaseView.m in Sources */,
 				9B76577719C672100098B394 /* JHRefreshCommonAniView.m in Sources */,
 				9B0F3A1B19CAC34600DE3DF9 /* JHRefreshCommonExampleController.m in Sources */,
@@ -473,6 +479,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JHRefreshExample/JHRefresh-Prefix.pch";
 				INFOPLIST_FILE = "JHRefreshExample/JHRefresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5dc440b9-ced5-4617-8a0d-be863d943b79";
 				WRAPPER_EXTENSION = app;
@@ -488,6 +495,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JHRefreshExample/JHRefresh-Prefix.pch";
 				INFOPLIST_FILE = "JHRefreshExample/JHRefresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5dc440b9-ced5-4617-8a0d-be863d943b79";
 				WRAPPER_EXTENSION = app;

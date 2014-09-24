@@ -7,7 +7,6 @@
 //
 
 #import "JHRefreshBaseTableViewController.h"
-#import "JHRefresh.h"
 
 @interface JHRefreshBaseTableViewController ()
 

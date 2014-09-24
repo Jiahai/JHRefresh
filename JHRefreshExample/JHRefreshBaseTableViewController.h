@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JHRefresh.h"
 
 @interface JHRefreshBaseTableViewController : UITableViewController
 

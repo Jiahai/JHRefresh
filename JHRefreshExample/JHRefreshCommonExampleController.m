@@ -7,7 +7,6 @@
 //
 
 #import "JHRefreshCommonExampleController.h"
-#import "JHRefresh.h"
 
 @interface JHRefreshCommonExampleController ()
 
@@ -29,6 +28,8 @@
 {
     [super viewDidLoad];
     
+    [self.navigationItem setTitle:@"普通刷新"];
+    
     __weak JHRefreshCommonExampleController *weakSelf = self;
     [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
         
@@ -42,7 +43,7 @@
             
             [weakSelf.tableView reloadData];
             
-            [weakSelf.tableView headerEndRefreshingWithResult:JHRefreshResultNone];
+            [weakSelf.tableView headerEndRefreshingWithResult:JHRefreshResultSuccess];
         });
         
     }];

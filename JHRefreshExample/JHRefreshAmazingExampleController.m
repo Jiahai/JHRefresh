@@ -7,7 +7,6 @@
 //
 
 #import "JHRefreshAmazingExampleController.h"
-#import "JHRefresh.h"
 #import "UIScrollView+JHExtension.h"
 
 @interface JHRefreshAmazingExampleController ()
@@ -35,6 +34,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self.navigationItem setTitle:@"动画刷新"];
     
     __weak JHRefreshAmazingExampleController *weakSelf = self;
     [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
