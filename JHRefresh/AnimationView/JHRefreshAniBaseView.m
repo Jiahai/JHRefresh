@@ -9,6 +9,7 @@
 #import "JHRefreshAniBaseView.h"
 #import "JHRefreshHeaderView.h"
 #import "JHRefreshFooterView.h"
+#import "UIView+JHExtension.h"
 
 @implementation JHRefreshAniBaseView
 
@@ -25,6 +26,11 @@
 
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {
+    [super willMoveToSuperview:newSuperview];
+    
+    self.jh_width = newSuperview.jh_width;
+    self.jh_height = newSuperview.jh_height;
+    
     if([newSuperview isKindOfClass:[JHRefreshHeaderView class]])
     {
         self.refreshViewType = JHRefreshViewTypeHeader;
@@ -35,8 +41,6 @@
     }
     
     self.refreshViewID = ((JHRefreshBaseView *)newSuperview).ID;
-    
-    [super willMoveToSuperview:newSuperview];
 }
 
 #pragma mark - JHRefreshViewDelegate

@@ -43,10 +43,11 @@
         {
             NSInteger pos = self.scrollView.contentOffset.y;
             
-            if(pos > 0 || pos < -JHRefreshViewHeight)
+            //headerView不可见/全部可见时，直接返回
+            if(pos > 0 || pos < -JHRefreshViewHeight-self.scrollView.jh_contentInsetTop)
                 return;
             
-            [self.aniView refreshViewPullingToPosition:abs(pos)];
+            [self.aniView refreshViewPullingToPosition:abs((int)pos)-self.scrollView.jh_contentInsetTop];
         }
     }
 }
@@ -54,11 +55,13 @@
 - (void)changeStateWithContentOffset
 {
     CGFloat currentOffsetY = self.scrollView.contentOffset.y;
-    CGFloat releaseToRefreshOffsetY = - self.jh_height;
+    CGFloat releaseToRefreshOffsetY = - self.scrollView.jh_contentInsetTop;
     
     //headerView的顶端不可见时，直接返回
-    if(currentOffsetY>=0)
+    if(currentOffsetY>=releaseToRefreshOffsetY)
         return;
+    
+    releaseToRefreshOffsetY -= self.jh_height;
     
     if(self.scrollView.isDragging)
     {

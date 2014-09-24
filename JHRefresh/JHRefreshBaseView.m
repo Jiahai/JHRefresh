@@ -34,7 +34,6 @@
 - (id)initWithFrame:(CGRect)frame
 {
     frame.size.height = JHRefreshViewHeight;
-    frame.size.width = 320;
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
@@ -61,6 +60,8 @@
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {
     [super willMoveToSuperview:newSuperview];
+    
+    self.jh_width = newSuperview.jh_width;
     
     [self.superview removeObserver:self forKeyPath:JHRefreshContentOffset];
     
@@ -111,7 +112,7 @@
                     case JHRefreshResultSuccess:
                     case JHRefreshResultFailure:
                     {
-                        //延时隐藏refreshView;
+                        //展示刷新结果，延时隐藏refreshView;
                         dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, JHRefreshShowResultAnimationDuration * NSEC_PER_SEC);
                         //延期执行
                         dispatch_after(delayInNanoSeconds, dispatch_get_main_queue(), ^{
@@ -157,15 +158,15 @@
     self.state = JHRefreshStateNormal;
 }
 
-//- (void)setRefreshingContentInset
-//{
-//    _scrollView.jh_contentInsetTop += self.jh_height;
-//}
-//
-//- (void)resumeContentInset
-//{
-//    
-//}
+- (void)setRefreshingContentInset
+{
+
+}
+
+- (void)resumeContentInset
+{
+    
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

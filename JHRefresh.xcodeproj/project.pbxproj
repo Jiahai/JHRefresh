@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B0F3A1B19CAC34600DE3DF9 /* JHRefreshCommonExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F3A1A19CAC34600DE3DF9 /* JHRefreshCommonExampleController.m */; };
+		9B0F3A1E19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F3A1D19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.m */; };
+		9B0F3A2119CACE3900DE3DF9 /* JHRefreshBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F3A2019CACE3900DE3DF9 /* JHRefreshBaseTableViewController.m */; };
 		9B4911F719C80565007F607A /* JHRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4911F619C80565007F607A /* JHRefreshFooterView.m */; };
 		9B5AF3A419C97C2700CD4AFC /* JHRefreshAmazingAniView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5AF3A319C97C2700CD4AFC /* JHRefreshAmazingAniView.m */; };
 		9B5AF3A619C97CCC00CD4AFC /* JHRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9B5AF3A519C97CCC00CD4AFC /* JHRefresh.bundle */; };
@@ -44,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B0F3A1919CAC34600DE3DF9 /* JHRefreshCommonExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshCommonExampleController.h; sourceTree = "<group>"; };
+		9B0F3A1A19CAC34600DE3DF9 /* JHRefreshCommonExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshCommonExampleController.m; sourceTree = "<group>"; };
+		9B0F3A1C19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshAmazingExampleController.h; sourceTree = "<group>"; };
+		9B0F3A1D19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshAmazingExampleController.m; sourceTree = "<group>"; };
+		9B0F3A1F19CACE3900DE3DF9 /* JHRefreshBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshBaseTableViewController.h; sourceTree = "<group>"; };
+		9B0F3A2019CACE3900DE3DF9 /* JHRefreshBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshBaseTableViewController.m; sourceTree = "<group>"; };
+		9B3625CE19D29EBB00AAC32F /* JHRefresh-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JHRefresh-Prefix.pch"; sourceTree = "<group>"; };
 		9B4911F519C80565007F607A /* JHRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshFooterView.h; sourceTree = "<group>"; };
 		9B4911F619C80565007F607A /* JHRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshFooterView.m; sourceTree = "<group>"; };
 		9B5AF3A219C97C2700CD4AFC /* JHRefreshAmazingAniView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshAmazingAniView.h; sourceTree = "<group>"; };
@@ -78,7 +88,6 @@
 		9BE4029119C28699002A8F87 /* JHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAppDelegate.h; sourceTree = "<group>"; };
 		9BE4029219C28699002A8F87 /* JHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAppDelegate.m; sourceTree = "<group>"; };
 		9BE4029319C28699002A8F87 /* JHRefresh-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "JHRefresh-Info.plist"; sourceTree = "<group>"; };
-		9BE4029419C28699002A8F87 /* JHRefresh-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JHRefresh-Prefix.pch"; sourceTree = "<group>"; };
 		9BE4029519C28699002A8F87 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9BE4029D19C288DA002A8F87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BE402A719C2A5C2002A8F87 /* JHRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshBaseView.h; sourceTree = "<group>"; };
@@ -181,6 +190,12 @@
 				9BE4029219C28699002A8F87 /* JHAppDelegate.m */,
 				9B76578919C6CE760098B394 /* JHRefreshExampleViewController.h */,
 				9B76578A19C6CE760098B394 /* JHRefreshExampleViewController.m */,
+				9B0F3A1F19CACE3900DE3DF9 /* JHRefreshBaseTableViewController.h */,
+				9B0F3A2019CACE3900DE3DF9 /* JHRefreshBaseTableViewController.m */,
+				9B0F3A1919CAC34600DE3DF9 /* JHRefreshCommonExampleController.h */,
+				9B0F3A1A19CAC34600DE3DF9 /* JHRefreshCommonExampleController.m */,
+				9B0F3A1C19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.h */,
+				9B0F3A1D19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.m */,
 				9BE4029019C28699002A8F87 /* Images.xcassets */,
 				9BE4029A19C286B7002A8F87 /* Supporting Files */,
 			);
@@ -193,7 +208,7 @@
 				9BE4029C19C288DA002A8F87 /* InfoPlist.strings */,
 				9BE4029519C28699002A8F87 /* main.m */,
 				9BE4029319C28699002A8F87 /* JHRefresh-Info.plist */,
-				9BE4029419C28699002A8F87 /* JHRefresh-Prefix.pch */,
+				9B3625CE19D29EBB00AAC32F /* JHRefresh-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -321,13 +336,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B0F3A2119CACE3900DE3DF9 /* JHRefreshBaseTableViewController.m in Sources */,
 				9BE402AC19C2A5C2002A8F87 /* JHRefreshBaseView.m in Sources */,
 				9B76577C19C67AEE0098B394 /* JHRefreshHeaderView.m in Sources */,
 				9B76578B19C6CE760098B394 /* JHRefreshExampleViewController.m in Sources */,
 				9B76578519C6B6C10098B394 /* UIView+JHExtension.m in Sources */,
 				9B76578819C6C17B0098B394 /* UIScrollView+JHExtension.m in Sources */,
+				9B0F3A1E19CAC36200DE3DF9 /* JHRefreshAmazingExampleController.m in Sources */,
 				9B76577F19C67E950098B394 /* JHRefreshAniBaseView.m in Sources */,
 				9B76577719C672100098B394 /* JHRefreshCommonAniView.m in Sources */,
+				9B0F3A1B19CAC34600DE3DF9 /* JHRefreshCommonExampleController.m in Sources */,
 				9B4911F719C80565007F607A /* JHRefreshFooterView.m in Sources */,
 				9B76579019C6CFE00098B394 /* UIScrollView+JHRefresh.m in Sources */,
 				9BE4029919C28699002A8F87 /* main.m in Sources */,
@@ -450,10 +468,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 加海 邢 (WGWYCM8XXV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 加海 邢 (WGWYCM8XXV)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JHRefreshExample/JHRefresh-Prefix.pch";
 				INFOPLIST_FILE = "JHRefreshExample/JHRefresh-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5dc440b9-ced5-4617-8a0d-be863d943b79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -463,10 +484,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 加海 邢 (WGWYCM8XXV)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JHRefreshExample/JHRefresh-Prefix.pch";
 				INFOPLIST_FILE = "JHRefreshExample/JHRefresh-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5dc440b9-ced5-4617-8a0d-be863d943b79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

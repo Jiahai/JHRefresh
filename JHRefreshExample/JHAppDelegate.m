@@ -19,7 +19,7 @@
     [self.window makeKeyAndVisible];
     
     JHRefreshExampleViewController *Vc = [[JHRefreshExampleViewController alloc] init];
-    self.window.rootViewController = Vc;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:Vc];
     
     return YES;
 }

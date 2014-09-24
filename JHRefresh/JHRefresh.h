@@ -7,3 +7,5 @@
 //
 
 #import "UIScrollView+JHRefresh.h"
+#import "JHRefreshCommonAniView.h"
+#import "JHRefreshAmazingAniView.h"

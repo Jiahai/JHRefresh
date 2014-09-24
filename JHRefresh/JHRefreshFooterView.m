@@ -26,7 +26,9 @@
 {
     [super willMoveToSuperview:newSuperview];
     
-    [self.scrollView addObserver:self forKeyPath:JHRefreshContentSize options:NSKeyValueObservingOptionNew context:nil];
+    [self.superview removeObserver:self forKeyPath:JHRefreshContentSize];
+    
+    [newSuperview addObserver:self forKeyPath:JHRefreshContentSize options:NSKeyValueObservingOptionNew context:nil];
     
     [self ajustFooterView];
 }
@@ -49,8 +51,9 @@
         
         if([self.aniView respondsToSelector:@selector(refreshViewPullingToPosition:)])
         {
-            NSInteger pos = self.scrollView.contentOffset.y + self.scrollView.jh_height - self.scrollView.jh_contentSizeHeight;
+            NSInteger pos = self.scrollView.contentOffset.y + self.scrollView.jh_height - self.scrollView.jh_contentSizeHeight-self.scrollView.jh_contentInsetBottom;
             
+            //footerView不可见/全部显示后，直接返回
             if(pos <= 0 || pos > JHRefreshViewHeight)
                 return;
             
@@ -62,7 +65,7 @@
 - (void)changeStateWithContentOffset
 {
     CGFloat currentOffsetY = self.scrollView.contentOffset.y;
-    CGFloat releaseToRefreshOffsetY = self.scrollView.jh_contentSizeHeight - self.scrollView.jh_height;
+    CGFloat releaseToRefreshOffsetY = self.scrollView.jh_contentSizeHeight - self.scrollView.jh_height + self.scrollView.jh_contentInsetBottom;
     
     //footerView的顶端不可见时，直接返回
     if(currentOffsetY <= releaseToRefreshOffsetY)

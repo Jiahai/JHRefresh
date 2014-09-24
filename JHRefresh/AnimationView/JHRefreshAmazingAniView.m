@@ -101,7 +101,7 @@
     
     _aniImgView.center = center;
     
-    NSString *name = [NSString stringWithFormat:@"dropdown_anim__000%d.png",pos];
+    NSString *name = [NSString stringWithFormat:@"dropdown_anim__000%d.png",(int)pos];
     _aniImgView.image = [UIImage imageNamed:JHRefreshSrcName(name)];
     
 }

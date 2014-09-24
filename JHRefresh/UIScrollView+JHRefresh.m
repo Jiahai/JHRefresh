@@ -49,25 +49,32 @@ static char JHRefreshFooterViewKey;
 }
 
 #pragma mark -
-- (void)addRefreshHeaderView:(void (^)())beginRefresh
+- (void)addRefreshHeaderViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh
 {
-    JHRefreshHeaderView *headerView = [JHRefreshHeaderView createView];
-    headerView.beginRefreshingBlock = beginRefresh;
-    headerView.aniView = [[JHRefreshAmazingAniView alloc] initWithFrame:headerView.bounds];
-    [self addSubview:headerView];
+    assert([aniViewClass isSubclassOfClass:[JHRefreshAniBaseView class]]);
     
-    self.header = headerView;
+    if(!self.header)
+    {
+        JHRefreshHeaderView *headerView = [JHRefreshHeaderView createView];
+        headerView.beginRefreshingBlock = beginRefresh;
+        [self addSubview:headerView];
+        self.header = headerView;
+        headerView.aniView = [[aniViewClass alloc] init];
+    }
 }
 
-- (void)addRefreshFooterView:(void (^)())beginRefresh
+- (void)addRefreshFooterViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh
 {
-    JHRefreshFooterView *footerView = [JHRefreshFooterView createView];
-    footerView.beginRefreshingBlock = beginRefresh;
-//    footerView.aniView = [[JHRefreshCommonAniView alloc] initWithFrame:footerView.bounds];
-    footerView.aniView = [[JHRefreshAmazingAniView alloc] initWithFrame:footerView.bounds];
-    [self addSubview:footerView];
+    assert([aniViewClass isSubclassOfClass:[JHRefreshAniBaseView class]]);
     
-    self.footer = footerView;
+    if(!self.footer)
+    {
+        JHRefreshFooterView *footerView = [JHRefreshFooterView createView];
+        footerView.beginRefreshingBlock = beginRefresh;
+        [self addSubview:footerView];
+        self.footer = footerView;
+        footerView.aniView = [[aniViewClass alloc] init];
+    }
 }
 
 - (void)headerEndRefreshingWithResult:(JHRefreshResult)result

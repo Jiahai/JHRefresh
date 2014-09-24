@@ -1,22 +1,20 @@
 //
-//  JHRefreshExampleViewController.m
+//  JHRefreshBaseTableViewController.m
 //  JHRefresh
 //
-//  Created by Jiahai on 14-9-15.
+//  Created by Jiahai on 14-9-18.
 //  Copyright (c) 2014年 Jiahai. All rights reserved.
 //
 
-#import "JHRefreshExampleViewController.h"
+#import "JHRefreshBaseTableViewController.h"
 #import "JHRefresh.h"
-#import "JHRefreshCommonExampleController.h"
-#import "JHRefreshAmazingExampleController.h"
 
-@interface JHRefreshExampleViewController ()
+@interface JHRefreshBaseTableViewController ()
+
 @property (nonatomic, assign) NSInteger count;
 @end
 
-
-@implementation JHRefreshExampleViewController
+@implementation JHRefreshBaseTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,6 +34,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    _count = 20;
     
 }
 
@@ -58,13 +58,12 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    
-    return 2;
+    return _count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"];
     
     if(cell == nil)
@@ -73,40 +72,9 @@
     }
     
     // Configure the cell...
-    switch (indexPath.row) {
-        case 0:
-        {
-            cell.textLabel.text = @"普通的下拉刷新";
-        }
-            break;
-        case 1:
-        {
-            cell.textLabel.text = @"仿大众点评下拉刷新";
-        }
-            break;
-        default:
-            break;
-    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.row) {
-        case 0:
-        {
-            [self.navigationController pushViewController:[[JHRefreshCommonExampleController alloc] init] animated:YES];
-        }
-            break;
-        case 1:
-        {
-            [self.navigationController pushViewController:[[JHRefreshAmazingExampleController alloc] init] animated:YES];
-        }
-            break;
-        default:
-            break;
-    }
 }
 
 

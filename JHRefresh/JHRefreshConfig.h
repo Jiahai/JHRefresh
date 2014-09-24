@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, JHRefreshResult) {
     JHRefreshResultFailure
 };
 
+
+
 extern const CGFloat JHRefreshViewHeight;
 extern const CGFloat JHRefreshFastAnimationDuration;
 extern const CGFloat JHRefreshSlowAnimationDuration;

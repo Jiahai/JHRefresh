@@ -1,22 +1,21 @@
 //
-//  JHRefreshExampleViewController.m
+//  JHRefreshAmazingExampleController.m
 //  JHRefresh
 //
-//  Created by Jiahai on 14-9-15.
+//  Created by Jiahai on 14-9-18.
 //  Copyright (c) 2014年 Jiahai. All rights reserved.
 //
 
-#import "JHRefreshExampleViewController.h"
-#import "JHRefresh.h"
-#import "JHRefreshCommonExampleController.h"
 #import "JHRefreshAmazingExampleController.h"
+#import "JHRefresh.h"
+#import "UIScrollView+JHExtension.h"
 
-@interface JHRefreshExampleViewController ()
+@interface JHRefreshAmazingExampleController ()
+
 @property (nonatomic, assign) NSInteger count;
 @end
 
-
-@implementation JHRefreshExampleViewController
+@implementation JHRefreshAmazingExampleController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,6 +36,42 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    __weak JHRefreshAmazingExampleController *weakSelf = self;
+    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
+        
+        //延时隐藏refreshView;
+        double delayInSeconds = 2.0;
+        //创建延期的时间 2S
+        dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        //延期执行
+        dispatch_after(delayInNanoSeconds, dispatch_get_main_queue(), ^{
+            weakSelf.count =20;
+            
+            [weakSelf.tableView reloadData];
+            
+            [weakSelf.tableView headerEndRefreshingWithResult:JHRefreshResultNone];
+        });
+        
+    }];
+    
+    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
+        
+        //延时隐藏refreshView;
+        double delayInSeconds = 2.0;
+        //创建延期的时间 2S
+        dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        //延期执行
+        dispatch_after(delayInNanoSeconds, dispatch_get_main_queue(), ^{
+            weakSelf.count +=20;
+            
+            [weakSelf.tableView reloadData];
+            
+            [weakSelf.tableView footerEndRefreshing];
+        });
+        
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,69 +81,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    
-    return 2;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"];
-    
-    if(cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
-    }
-    
-    // Configure the cell...
-    switch (indexPath.row) {
-        case 0:
-        {
-            cell.textLabel.text = @"普通的下拉刷新";
-        }
-            break;
-        case 1:
-        {
-            cell.textLabel.text = @"仿大众点评下拉刷新";
-        }
-            break;
-        default:
-            break;
-    }
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.row) {
-        case 0:
-        {
-            [self.navigationController pushViewController:[[JHRefreshCommonExampleController alloc] init] animated:YES];
-        }
-            break;
-        case 1:
-        {
-            [self.navigationController pushViewController:[[JHRefreshAmazingExampleController alloc] init] animated:YES];
-        }
-            break;
-        default:
-            break;
-    }
-}
-
 
 /*
 // Override to support conditional editing of the table view.
