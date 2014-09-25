@@ -1,4 +1,4 @@
-##可快速实现自定义下拉刷新组件
+#JHRefresh-可快速实现自定义下拉刷新组件
 =========
 ##1、如何使用封装好的刷新组件？
     将JHRefresh文件夹加到项目中，#import "JHRefresh.h"，然后加入以下代码：
@@ -61,8 +61,8 @@ JHRefreshCommonAniView| JHRefreshAmazingAniView | JHRefreshCommonAniView </br> +
  */
 - (void)refreshViewPullingToPosition:(NSInteger)pos;
 ```
-  * （3）使用自定义的CustomViewAniView
-  ```
+* （3）使用自定义的CustomViewAniView
+  ```Objective-C
   [self.tableView addRefreshHeaderViewWithAniViewClass:[CustomViewAniView class] beginRefresh:^{
         //开始刷新时需要做的事情写在这里。
         
