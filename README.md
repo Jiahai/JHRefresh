@@ -27,7 +27,8 @@ Demo中封装了2种刷新效果（JHRefreshCommonAniView、JHRefreshAmazingAniV
 普通刷新效果  | 动画刷新效果  | 组合刷新效果
 :-------------: | :-------------: | :-------------:
 ![](https://github.com/Jiahai/JHRefresh/blob/master/JHRefreshSnapShot/Common.gif)  | ![](https://github.com/Jiahai/JHRefresh/blob/master/JHRefreshSnapShot/Amazing.gif) | ![](https://github.com/Jiahai/JHRefresh/blob/master/JHRefreshSnapShot/Combine.gif)
-JHRefreshCommonAniView| JHRefreshAmazingAniView | JHRefreshCommonAniView </br> + </br> JHRefreshCommonAniView 
+JHRefreshCommonAniView| JHRefreshAmazingAniView | JHRefreshCommonAniView <br> + <br> JHRefreshAmazingAniView 
+
 
 ##2、如何自定义刷新组件？
   * （1）自定义CustomViewAniView继承JHRefreshAniBaseView
