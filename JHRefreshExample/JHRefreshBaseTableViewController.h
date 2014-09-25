@@ -11,4 +11,5 @@
 
 @interface JHRefreshBaseTableViewController : UITableViewController
 
+@property (nonatomic, assign) NSInteger count;
 @end

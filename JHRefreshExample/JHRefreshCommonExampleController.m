@@ -9,8 +9,6 @@
 #import "JHRefreshCommonExampleController.h"
 
 @interface JHRefreshCommonExampleController ()
-
-@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation JHRefreshCommonExampleController
@@ -43,6 +41,7 @@
             
             [weakSelf.tableView reloadData];
             
+            //事情做完了别忘了结束刷新动画~~~
             [weakSelf.tableView headerEndRefreshingWithResult:JHRefreshResultSuccess];
         });
         
@@ -60,6 +59,7 @@
             
             [weakSelf.tableView reloadData];
             
+            //事情做完了别忘了结束刷新动画~~~
             [weakSelf.tableView footerEndRefreshing];
         });
         

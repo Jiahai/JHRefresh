@@ -11,8 +11,6 @@
 #import "JHRefreshAmazingAniView.h"
 
 @interface JHRefreshCombineExampleController ()
-
-@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation JHRefreshCombineExampleController

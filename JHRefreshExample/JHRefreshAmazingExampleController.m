@@ -10,8 +10,6 @@
 #import "UIScrollView+JHExtension.h"
 
 @interface JHRefreshAmazingExampleController ()
-
-@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation JHRefreshAmazingExampleController

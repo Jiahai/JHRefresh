@@ -9,8 +9,6 @@
 #import "JHRefreshBaseTableViewController.h"
 
 @interface JHRefreshBaseTableViewController ()
-
-@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation JHRefreshBaseTableViewController

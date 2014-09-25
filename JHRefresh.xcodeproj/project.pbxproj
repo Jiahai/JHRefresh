@@ -29,6 +29,9 @@
 		9B8B176519C2850800A07333 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B176319C2850800A07333 /* InfoPlist.strings */; };
 		9B8B176719C2850800A07333 /* JHRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B176619C2850800A07333 /* JHRefreshTests.m */; };
 		9B925CDE19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */; };
+		9BB3B6CE19D3D2360016668A /* Amazing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3B6CB19D3D2360016668A /* Amazing.gif */; };
+		9BB3B6CF19D3D2360016668A /* Combine.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3B6CC19D3D2360016668A /* Combine.gif */; };
+		9BB3B6D019D3D2360016668A /* Common.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3B6CD19D3D2360016668A /* Common.gif */; };
 		9BE4029619C28699002A8F87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4029019C28699002A8F87 /* Images.xcassets */; };
 		9BE4029719C28699002A8F87 /* JHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4029219C28699002A8F87 /* JHAppDelegate.m */; };
 		9BE4029919C28699002A8F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4029519C28699002A8F87 /* main.m */; };
@@ -87,6 +90,9 @@
 		9B8B176619C2850800A07333 /* JHRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHRefreshTests.m; sourceTree = "<group>"; };
 		9B925CDC19D2BDAD0048CE7F /* JHRefreshCombineExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshCombineExampleController.h; sourceTree = "<group>"; };
 		9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshCombineExampleController.m; sourceTree = "<group>"; };
+		9BB3B6CB19D3D2360016668A /* Amazing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Amazing.gif; sourceTree = "<group>"; };
+		9BB3B6CC19D3D2360016668A /* Combine.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Combine.gif; sourceTree = "<group>"; };
+		9BB3B6CD19D3D2360016668A /* Common.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Common.gif; sourceTree = "<group>"; };
 		9BE4029019C28699002A8F87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9BE4029119C28699002A8F87 /* JHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAppDelegate.h; sourceTree = "<group>"; };
 		9BE4029219C28699002A8F87 /* JHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAppDelegate.m; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 			children = (
 				9BE402A619C2A5C2002A8F87 /* JHRefresh */,
 				9B8B177019C2865000A07333 /* JHRefreshExample */,
+				9BB3B6CA19D3D2360016668A /* JHRefreshSnapShot */,
 				9B8B176019C2850800A07333 /* JHRefreshTests */,
 				9B8B174019C2850700A07333 /* Frameworks */,
 				9B8B173F19C2850700A07333 /* Products */,
@@ -205,6 +212,16 @@
 				9BE4029A19C286B7002A8F87 /* Supporting Files */,
 			);
 			path = JHRefreshExample;
+			sourceTree = "<group>";
+		};
+		9BB3B6CA19D3D2360016668A /* JHRefreshSnapShot */ = {
+			isa = PBXGroup;
+			children = (
+				9BB3B6CB19D3D2360016668A /* Amazing.gif */,
+				9BB3B6CC19D3D2360016668A /* Combine.gif */,
+				9BB3B6CD19D3D2360016668A /* Common.gif */,
+			);
+			path = JHRefreshSnapShot;
 			sourceTree = "<group>";
 		};
 		9BE4029A19C286B7002A8F87 /* Supporting Files */ = {
@@ -320,8 +337,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB3B6CF19D3D2360016668A /* Combine.gif in Resources */,
+				9BB3B6D019D3D2360016668A /* Common.gif in Resources */,
 				9B5AF3A619C97CCC00CD4AFC /* JHRefresh.bundle in Resources */,
 				9BE4029E19C288DA002A8F87 /* InfoPlist.strings in Resources */,
+				9BB3B6CE19D3D2360016668A /* Amazing.gif in Resources */,
 				9BE4029619C28699002A8F87 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
