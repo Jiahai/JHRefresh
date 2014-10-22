@@ -1,6 +1,5 @@
-JHRefresh
+JHRefresh-可快速自定义下拉刷新界面
 ==========
-可快速自定义下拉刷新界面
 
 ##1、如何使用封装好的刷新组件？
     将JHRefresh文件夹加到项目中，#import "JHRefresh.h"，然后加入以下代码：
