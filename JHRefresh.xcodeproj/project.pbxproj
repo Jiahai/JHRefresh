@@ -23,9 +23,6 @@
 		9B8B174219C2850700A07333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174119C2850700A07333 /* Foundation.framework */; };
 		9B8B174419C2850700A07333 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174319C2850700A07333 /* CoreGraphics.framework */; };
 		9B8B174619C2850700A07333 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174519C2850700A07333 /* UIKit.framework */; };
-		9B8B175B19C2850700A07333 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B175A19C2850700A07333 /* XCTest.framework */; };
-		9B8B175C19C2850700A07333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174119C2850700A07333 /* Foundation.framework */; };
-		9B8B175D19C2850800A07333 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174519C2850700A07333 /* UIKit.framework */; };
 		9B925CDE19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */; };
 		9BB3B6CE19D3D2360016668A /* Amazing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3B6CB19D3D2360016668A /* Amazing.gif */; };
 		9BB3B6CF19D3D2360016668A /* Combine.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3B6CC19D3D2360016668A /* Combine.gif */; };
@@ -37,16 +34,6 @@
 		9BE402AC19C2A5C2002A8F87 /* JHRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE402A819C2A5C2002A8F87 /* JHRefreshBaseView.m */; };
 		9BE402AD19C2A5C2002A8F87 /* JHRefreshConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE402AA19C2A5C2002A8F87 /* JHRefreshConfig.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9B8B175E19C2850800A07333 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9B8B173619C2850700A07333 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B8B173D19C2850700A07333;
-			remoteInfo = JHRefresh;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9B0F3A1919CAC34600DE3DF9 /* JHRefreshCommonExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshCommonExampleController.h; sourceTree = "<group>"; };
@@ -81,7 +68,6 @@
 		9B8B174119C2850700A07333 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B8B174319C2850700A07333 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9B8B174519C2850700A07333 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9B8B175919C2850700A07333 /* JHRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JHRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8B175A19C2850700A07333 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9B925CDC19D2BDAD0048CE7F /* JHRefreshCombineExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshCombineExampleController.h; sourceTree = "<group>"; };
 		9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshCombineExampleController.m; sourceTree = "<group>"; };
@@ -109,16 +95,6 @@
 				9B8B174419C2850700A07333 /* CoreGraphics.framework in Frameworks */,
 				9B8B174619C2850700A07333 /* UIKit.framework in Frameworks */,
 				9B8B174219C2850700A07333 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B8B175619C2850700A07333 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B8B175B19C2850700A07333 /* XCTest.framework in Frameworks */,
-				9B8B175D19C2850800A07333 /* UIKit.framework in Frameworks */,
-				9B8B175C19C2850700A07333 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				9B8B173E19C2850700A07333 /* JHRefresh.app */,
-				9B8B175919C2850700A07333 /* JHRefreshTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,24 +232,6 @@
 			productReference = 9B8B173E19C2850700A07333 /* JHRefresh.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9B8B175819C2850700A07333 /* JHRefreshTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B8B176D19C2850800A07333 /* Build configuration list for PBXNativeTarget "JHRefreshTests" */;
-			buildPhases = (
-				9B8B175519C2850700A07333 /* Sources */,
-				9B8B175619C2850700A07333 /* Frameworks */,
-				9B8B175719C2850700A07333 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B8B175F19C2850800A07333 /* PBXTargetDependency */,
-			);
-			name = JHRefreshTests;
-			productName = JHRefreshTests;
-			productReference = 9B8B175919C2850700A07333 /* JHRefreshTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -284,11 +241,6 @@
 				CLASSPREFIX = JH;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Jiahai;
-				TargetAttributes = {
-					9B8B175819C2850700A07333 = {
-						TestTargetID = 9B8B173D19C2850700A07333;
-					};
-				};
 			};
 			buildConfigurationList = 9B8B173919C2850700A07333 /* Build configuration list for PBXProject "JHRefresh" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -303,7 +255,6 @@
 			projectRoot = "";
 			targets = (
 				9B8B173D19C2850700A07333 /* JHRefresh */,
-				9B8B175819C2850700A07333 /* JHRefreshTests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,13 +270,6 @@
 				9BE4029E19C288DA002A8F87 /* InfoPlist.strings in Resources */,
 				9BB3B6CE19D3D2360016668A /* Amazing.gif in Resources */,
 				9BE4029619C28699002A8F87 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B8B175719C2850700A07333 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,22 +300,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B8B175519C2850700A07333 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9B8B175F19C2850800A07333 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9B8B173D19C2850700A07333 /* JHRefresh */;
-			targetProxy = 9B8B175E19C2850800A07333 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9BE4029C19C288DA002A8F87 /* InfoPlist.strings */ = {
@@ -488,46 +417,6 @@
 			};
 			name = Release;
 		};
-		9B8B176E19C2850800A07333 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JHRefresh.app/JHRefresh";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JHRefresh/JHRefresh-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "JHRefreshTests/JHRefreshTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		9B8B176F19C2850800A07333 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JHRefresh.app/JHRefresh";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JHRefresh/JHRefresh-Prefix.pch";
-				INFOPLIST_FILE = "JHRefreshTests/JHRefreshTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -545,15 +434,6 @@
 			buildConfigurations = (
 				9B8B176B19C2850800A07333 /* Debug */,
 				9B8B176C19C2850800A07333 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9B8B176D19C2850800A07333 /* Build configuration list for PBXNativeTarget "JHRefreshTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B8B176E19C2850800A07333 /* Debug */,
-				9B8B176F19C2850800A07333 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
