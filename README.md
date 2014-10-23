@@ -73,4 +73,4 @@ JHRefreshCommonAniView  | JHRefreshAmazingAniView  | JHRefreshCommonAniView <br>
     }];
   ```
   
-#具体详情请参看Demo，如有问题请告知，我会尽快修复。
+#具体详情请参看Demo
