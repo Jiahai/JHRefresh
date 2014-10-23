@@ -26,8 +26,6 @@
 		9B8B175B19C2850700A07333 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B175A19C2850700A07333 /* XCTest.framework */; };
 		9B8B175C19C2850700A07333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174119C2850700A07333 /* Foundation.framework */; };
 		9B8B175D19C2850800A07333 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B174519C2850700A07333 /* UIKit.framework */; };
-		9B8B176519C2850800A07333 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B176319C2850800A07333 /* InfoPlist.strings */; };
-		9B8B176719C2850800A07333 /* JHRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B176619C2850800A07333 /* JHRefreshTests.m */; };
 		9B925CDE19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */; };
 		9BB3B6CE19D3D2360016668A /* Amazing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3B6CB19D3D2360016668A /* Amazing.gif */; };
 		9BB3B6CF19D3D2360016668A /* Combine.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3B6CC19D3D2360016668A /* Combine.gif */; };
@@ -85,9 +83,6 @@
 		9B8B174519C2850700A07333 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9B8B175919C2850700A07333 /* JHRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JHRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8B175A19C2850700A07333 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9B8B176219C2850800A07333 /* JHRefreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JHRefreshTests-Info.plist"; sourceTree = "<group>"; };
-		9B8B176419C2850800A07333 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9B8B176619C2850800A07333 /* JHRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHRefreshTests.m; sourceTree = "<group>"; };
 		9B925CDC19D2BDAD0048CE7F /* JHRefreshCombineExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRefreshCombineExampleController.h; sourceTree = "<group>"; };
 		9B925CDD19D2BDAD0048CE7F /* JHRefreshCombineExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRefreshCombineExampleController.m; sourceTree = "<group>"; };
 		9BB3B6CB19D3D2360016668A /* Amazing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Amazing.gif; sourceTree = "<group>"; };
@@ -149,7 +144,6 @@
 				9BE402A619C2A5C2002A8F87 /* JHRefresh */,
 				9B8B177019C2865000A07333 /* JHRefreshExample */,
 				9BB3B6CA19D3D2360016668A /* JHRefreshSnapShot */,
-				9B8B176019C2850800A07333 /* JHRefreshTests */,
 				9B8B174019C2850700A07333 /* Frameworks */,
 				9B8B173F19C2850700A07333 /* Products */,
 			);
@@ -173,24 +167,6 @@
 				9B8B175A19C2850700A07333 /* XCTest.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9B8B176019C2850800A07333 /* JHRefreshTests */ = {
-			isa = PBXGroup;
-			children = (
-				9B8B176619C2850800A07333 /* JHRefreshTests.m */,
-				9B8B176119C2850800A07333 /* Supporting Files */,
-			);
-			path = JHRefreshTests;
-			sourceTree = "<group>";
-		};
-		9B8B176119C2850800A07333 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9B8B176219C2850800A07333 /* JHRefreshTests-Info.plist */,
-				9B8B176319C2850800A07333 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		9B8B177019C2865000A07333 /* JHRefreshExample */ = {
@@ -350,7 +326,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8B176519C2850800A07333 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +360,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8B176719C2850800A07333 /* JHRefreshTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,14 +374,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9B8B176319C2850800A07333 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9B8B176419C2850800A07333 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		9BE4029C19C288DA002A8F87 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -497,8 +463,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: 加海 邢 (WGWYCM8XXV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 加海 邢 (WGWYCM8XXV)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JHRefreshExample/JHRefresh-Prefix.pch";
-				INFOPLIST_FILE = "JHRefreshExample/JHRefresh-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JHRefreshExample/JHRefresh-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/JHRefreshExample/JHRefresh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5dc440b9-ced5-4617-8a0d-be863d943b79";
@@ -513,8 +479,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 加海 邢 (WGWYCM8XXV)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JHRefreshExample/JHRefresh-Prefix.pch";
-				INFOPLIST_FILE = "JHRefreshExample/JHRefresh-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JHRefreshExample/JHRefresh-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/JHRefreshExample/JHRefresh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5dc440b9-ced5-4617-8a0d-be863d943b79";
