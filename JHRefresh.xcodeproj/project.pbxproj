@@ -396,7 +396,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/JHRefreshExample/JHRefresh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "d9aef7a6-3dd1-403a-bff8-d71103768579";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -412,7 +412,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/JHRefreshExample/JHRefresh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "d9aef7a6-3dd1-403a-bff8-d71103768579";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

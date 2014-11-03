@@ -70,7 +70,7 @@
         
     }];
     
-    
+    [self.tableView headerStartRefresh];
 }
 
 - (void)didReceiveMemoryWarning

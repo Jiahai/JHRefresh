@@ -27,6 +27,11 @@
 - (void)addRefreshFooterViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh;
 
 /**
+ *  自动开启下拉刷新
+ */
+- (void)headerStartRefresh;
+
+/**
  *  结束下拉刷新
  *
  *  @param result 刷新结果

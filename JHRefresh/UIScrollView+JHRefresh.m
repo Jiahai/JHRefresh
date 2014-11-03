@@ -77,6 +77,12 @@ static char JHRefreshFooterViewKey;
     }
 }
 
+- (void)headerStartRefresh
+{
+    self.header.state = JHRefreshStatePulling;
+    self.contentOffset = CGPointMake(self.contentOffset.x, -JHRefreshViewHeight);
+}
+
 - (void)headerEndRefreshingWithResult:(JHRefreshResult)result
 {
     [self.header endRefreshingWithResult:result];
