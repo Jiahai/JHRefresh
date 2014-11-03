@@ -30,7 +30,7 @@ JHRefreshCommonAniView  | JHRefreshAmazingAniView  | JHRefreshCommonAniView <br>
 ![](https://github.com/Jiahai/JHRefresh/blob/master/JHRefreshSnapShot/Common.gif)  | ![](https://github.com/Jiahai/JHRefresh/blob/master/JHRefreshSnapShot/Amazing.gif) | ![](https://github.com/Jiahai/JHRefresh/blob/master/JHRefreshSnapShot/Combine.gif)
 
 
- ##2、如何自定义刷新组件？
+##2、如何自定义刷新组件？
   * （1）自定义CustomViewAniView继承JHRefreshAniBaseView
   * （2）在CustomViewAniView.m中实现JHRefreshViewDelegate中的方法，对应的方法中实现UI的变换
 ```Objective-C
