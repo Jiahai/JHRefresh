@@ -65,7 +65,7 @@
 - (void)changeStateWithContentOffset
 {
     CGFloat currentOffsetY = self.scrollView.contentOffset.y;
-    CGFloat releaseToRefreshOffsetY = self.scrollView.jh_contentSizeHeight - self.scrollView.jh_height + self.scrollView.jh_contentInsetBottom;
+    CGFloat releaseToRefreshOffsetY = MAX(self.scrollView.jh_contentSizeHeight,self.scrollView.jh_height) - self.scrollView.jh_height + self.scrollView.jh_contentInsetBottom;
     
     //footerView的顶端不可见时，直接返回
     if(currentOffsetY <= releaseToRefreshOffsetY)
