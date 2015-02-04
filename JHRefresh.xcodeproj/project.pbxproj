@@ -396,7 +396,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/JHRefreshExample/JHRefresh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d9aef7a6-3dd1-403a-bff8-d71103768579";
+				PROVISIONING_PROFILE = "eea3c11c-fae8-40f8-9438-ac6d9ae6c214";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

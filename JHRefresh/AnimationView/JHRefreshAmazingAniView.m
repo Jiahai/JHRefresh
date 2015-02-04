@@ -72,6 +72,9 @@
         _aniImgView.animationDuration = 0.6;
         _aniImgView.animationRepeatCount = 0;
     }
+    
+    //刷新开始时，设置aniImageView的宽高
+    _aniImgView.jh_width = _aniImgView.jh_height = JHRefreshViewHeight;
     [_aniImgView startAnimating];
 }
 /**
@@ -86,7 +89,7 @@
 /**
  *  拖拽到对应的位置
  *
- *  @param pos 位置，范围：1-JHRefreshViewHeight
+ *  @param pos 位置，范围：1 ~ JHRefreshViewHeight
  */
 - (void)refreshViewPullingToPosition:(NSInteger)pos
 {
@@ -94,10 +97,9 @@
     {
         return;
     }
-    CGFloat x = 1;
     CGPoint center = _aniImgView.center;
     
-    _aniImgView.jh_width = _aniImgView.jh_height = x*pos;
+    _aniImgView.jh_width = _aniImgView.jh_height = pos;
     
     _aniImgView.center = center;
     
