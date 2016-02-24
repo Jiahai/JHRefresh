@@ -53,4 +53,37 @@
     self.frame = rect;
 }
 
+- (UIView *)jh_firstResponder
+{
+    if([self isKindOfClass:[UITextField class]] || [self isKindOfClass:[UITextView class]])
+    {
+        if(self.isFirstResponder)
+        {
+            return self;
+        }
+        else
+        {
+            return nil;
+        }
+    }
+    
+    NSArray *subViews = [self subviews];
+    
+    if(subViews.count == 0)
+    {
+        return nil;
+    }
+    
+    for(UIView *control in subViews)
+    {
+        UIView *firstResponder = control.jh_firstResponder;
+        if(firstResponder)
+        {
+            return firstResponder;
+        }
+    }
+        
+    return nil;
+}
+
 @end

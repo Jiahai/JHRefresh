@@ -18,6 +18,12 @@
  *  @param beginRefresh 开始刷新时需要执行的操作，如网络请求等
  */
 - (void)addRefreshHeaderViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh;
+
+/**
+ *  移除下拉刷新HeaderView
+ */
+- (void)removeRefreshHeaderView;
+
 /**
  *  添加上拉加载FooterView
  *
@@ -25,6 +31,12 @@
  *  @param beginRefresh 开始刷新时需要执行的操作，如网络请求等
  */
 - (void)addRefreshFooterViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh;
+
+/**
+ *  移除上拉加载FooterView
+ */
+- (void)removeRefreshFooterView;
+
 
 /**
  *  自动开启下拉刷新

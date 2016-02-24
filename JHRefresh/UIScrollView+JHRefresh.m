@@ -63,6 +63,13 @@ static char JHRefreshFooterViewKey;
     }
 }
 
+- (void)removeRefreshHeaderView
+{
+    [self headerEndRefreshingWithResult:JHRefreshResultNone];
+    [self.header removeFromSuperview];
+    self.header = nil;
+}
+
 - (void)addRefreshFooterViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh
 {
     assert([aniViewClass isSubclassOfClass:[JHRefreshAniBaseView class]]);
@@ -75,6 +82,13 @@ static char JHRefreshFooterViewKey;
         self.footer = footerView;
         footerView.aniView = [[aniViewClass alloc] init];
     }
+}
+
+- (void)removeRefreshFooterView
+{
+    [self footerEndRefreshing];
+    [self.footer removeFromSuperview];
+    self.footer = nil;
 }
 
 - (void)headerStartRefresh

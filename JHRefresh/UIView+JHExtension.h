@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (JHExtension)
+
 @property (nonatomic, assign)   CGFloat jh_originX;
 @property (nonatomic, assign)   CGFloat jh_originY;
 
 @property (nonatomic, assign)   CGFloat jh_width;
 @property (nonatomic, assign)   CGFloat jh_height;
+
+@property (nonatomic, readonly, getter=jh_firstResponder) UIView *jh_firstResponder;
 
 @end
