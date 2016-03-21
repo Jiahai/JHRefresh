@@ -32,41 +32,86 @@ NSString *const JHRefreshLastUpdateTimeFormat = @"yyyy-MM-dd HH:mm";
 
 @implementation JHRefreshConfig
 
-+ (NSString*)nowTimeString
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:JHRefreshLastUpdateTimeFormat];
-    return [NSString stringWithFormat:@"上次刷新：%@", [dateFormatter stringFromDate:[NSDate date]]];
-}
-
 + (NSString *)getLastUpdateTimeWithRefreshViewID:(NSInteger)ID
 {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSDictionary *refreshDic = [userDefault objectForKey:JHRefreshConfigKey];
-    NSString *time = [[refreshDic objectForKey:JHRefreshLastUpdateTimeKey] objectForKey:[NSString stringWithFormat:@"%@_%d",JHRefreshLastUpdateTimeKey,ID]];
+    NSDate *time = [[refreshDic objectForKey:JHRefreshLastUpdateTimeKey] objectForKey:[NSString stringWithFormat:@"%@_%d",JHRefreshLastUpdateTimeKey,(int)ID]];
     
-    if(!time)
+    return [self formatTimeString:time];
+}
+
++ (NSString *)formatTimeString:(NSDate *)time
+{
+    if(!time || ![time isKindOfClass:[NSDate class]])
     {
-        return [[self class] nowTimeString];
+        return @"";//[NSString stringWithFormat:@"%@更新", [[self class] nowTimeString]];
     }
     
-    return time;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:JHRefreshLastUpdateTimeFormat];
+    
+    NSDate *nowDate = [NSDate date];
+    
+    int interval = nowDate.timeIntervalSince1970 - time.timeIntervalSince1970;
+    
+    int dayInterval = 24*60*60;
+    int hourInterval = 60*60;
+    int miniteInterval = 60;
+    
+    switch (interval/dayInterval) {
+        case 0:
+        {
+            switch (interval/hourInterval) {
+                case 0:
+                {
+                    switch (interval/miniteInterval) {
+                        case 0:
+                        {
+                            return [NSString stringWithFormat:@"%d秒前更新",MAX(interval,1)];
+                        }
+                            break;
+                            
+                        default:
+                            return [NSString stringWithFormat:@"%d分钟前更新",MAX(interval/miniteInterval,1)];
+                            break;
+                    }
+                }
+                    break;
+                default:
+                    return [NSString stringWithFormat:@"%d小时前更新",MAX(interval/hourInterval,1)];
+                    break;
+            }
+        }
+            break;
+        case 1:
+        {
+            return @"1天前更新";
+        }
+            break;
+        default:
+            return [NSString stringWithFormat:@"%@更新",[dateFormatter stringFromDate:time]];
+            break;
+    }
+    
+    return nil;
 }
 
 + (void)updateLastUpdateTimeWithRefreshViewID:(NSInteger)ID
 {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *refreshDic = [userDefault objectForKey:JHRefreshConfigKey];
+    NSMutableDictionary *refreshDic = [NSMutableDictionary dictionaryWithDictionary:[userDefault objectForKey:JHRefreshConfigKey]];
     if(!refreshDic)
     {
         refreshDic = [NSMutableDictionary dictionary];
     }
-    NSMutableDictionary *lastUpdateTimeDic = [refreshDic objectForKey:JHRefreshLastUpdateTimeKey];
+    NSMutableDictionary *lastUpdateTimeDic = [NSMutableDictionary dictionaryWithDictionary:[refreshDic objectForKey:JHRefreshLastUpdateTimeKey]];
     if(!lastUpdateTimeDic)
     {
         lastUpdateTimeDic = [NSMutableDictionary dictionary];
     }
-    [lastUpdateTimeDic setObject:[[self class] nowTimeString] forKey:[NSString stringWithFormat:@"%@_%d",JHRefreshLastUpdateTimeKey,ID]];
+    [lastUpdateTimeDic setObject:[NSDate date] forKey:[NSString stringWithFormat:@"%@_%d",JHRefreshLastUpdateTimeKey,(int)ID]];
+    [refreshDic setObject:lastUpdateTimeDic forKey:JHRefreshLastUpdateTimeKey];
     
     [userDefault setObject:refreshDic forKey:JHRefreshConfigKey];
     [userDefault synchronize];

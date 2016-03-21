@@ -20,8 +20,14 @@
 - (void)addRefreshHeaderViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh;
 
 /**
- *  移除下拉刷新HeaderView
+ *  添加下拉刷新HeaderView
+ *
+ *  @param aniViewClass 需要执行的动画的Class
+ *  @param ID           下拉刷新控件的ID，用以区分不同的刷新时间
+ *  @param beginRefresh 开始刷新时需要执行的操作，如网络请求等
  */
+- (void)addRefreshHeaderViewWithAniViewClass:(Class)aniViewClass refreshID:(NSInteger)ID beginRefresh:(void (^)())beginRefresh;
+
 - (void)removeRefreshHeaderView;
 
 /**
@@ -32,11 +38,7 @@
  */
 - (void)addRefreshFooterViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh;
 
-/**
- *  移除上拉加载FooterView
- */
 - (void)removeRefreshFooterView;
-
 
 /**
  *  自动开启下拉刷新

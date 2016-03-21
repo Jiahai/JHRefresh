@@ -15,16 +15,16 @@
 @implementation JHRefreshCommonAniView
 
 NSString *const JHRefreshHeaderStatusTextNormal = @"下拉刷新";
-NSString *const JHRefreshHeaderStatusTextPulling = @"松开既可刷新,欢迎收藏 ^_^";
+NSString *const JHRefreshHeaderStatusTextPulling = @"松开既可刷新 ^_^";
 NSString *const JHRefreshHeaderStatusTextRefreshing = @"正在刷新。。。";
-NSString *const JHRefreshHeaderStatusTextSuccess = @"刷新成功,喜欢就收藏一下吧^_^";
-NSString *const JHRefreshHeaderStatusTextFailure = @"刷新失败";
+NSString *const JHRefreshHeaderStatusTextSuccess = @"刷新成功 ^_^";
+NSString *const JHRefreshHeaderStatusTextFailure = @"刷新失败 T_T";
 
 NSString *const JHRefreshFooterStatusTextNormal = @"上拉加载更多";
-NSString *const JHRefreshFooterStatusTextPulling = @"松开既可加载,欢迎收藏 ^_^";
+NSString *const JHRefreshFooterStatusTextPulling = @"松开加载更多 ^_^";
 NSString *const JHRefreshFooterStatusTextRefreshing = @"正在加载。。。";
-NSString *const JHRefreshFooterStatusTextSuccess = @"加载成功,喜欢就收藏一下吧^_^";
-NSString *const JHRefreshFooterStatusTextFailure = @"加载失败";
+NSString *const JHRefreshFooterStatusTextSuccess = @"加载成功 ^_^";
+NSString *const JHRefreshFooterStatusTextFailure = @"加载失败 T_T";
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -48,7 +48,7 @@ NSString *const JHRefreshFooterStatusTextFailure = @"加载失败";
         _lastUpdateTimeLabel.backgroundColor = [UIColor clearColor];
         _lastUpdateTimeLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_lastUpdateTimeLabel];
-        _lastUpdateTimeLabel.text = [JHRefreshConfig getLastUpdateTimeWithRefreshViewID:self.refreshViewID];
+//        _lastUpdateTimeLabel.text = [JHRefreshConfig getLastUpdateTimeWithRefreshViewID:self.refreshViewID];
         
         _arrowImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:JHRefreshSrcName(@"arrow")]];
         _arrowImgView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
@@ -90,6 +90,11 @@ NSString *const JHRefreshFooterStatusTextFailure = @"加载失败";
 }
 
 #pragma mark - JHRefreshViewDelegate
+- (void)refreshViewBeganPulling
+{
+    _lastUpdateTimeLabel.text = [JHRefreshConfig getLastUpdateTimeWithRefreshViewID:self.refreshViewID];
+}
+
 - (void)refreshViewAniToBePulling
 {
     switch (self.refreshViewType) {
@@ -186,8 +191,8 @@ NSString *const JHRefreshFooterStatusTextFailure = @"加载失败";
         }
             break;
     }
-    _lastUpdateTimeLabel.text = [JHRefreshConfig getLastUpdateTimeWithRefreshViewID:self.refreshViewID];
     [JHRefreshConfig updateLastUpdateTimeWithRefreshViewID:self.refreshViewID];
+    _lastUpdateTimeLabel.text = [JHRefreshConfig getLastUpdateTimeWithRefreshViewID:self.refreshViewID];
     [_activityView stopAnimating];
     _arrowImgView.hidden = NO;
 }

@@ -12,12 +12,17 @@
 @protocol JHRefreshViewDelegate <NSObject>
 
 @required
+
 /**
- *  下拉时的动画
+ *  开始下拉,但并未变为下拉状态，只有HeaderView触发
+ */
+- (void)refreshViewBeganPulling;
+/**
+ *  普通状态变为下拉状态 Normal->Pulling
  */
 - (void)refreshViewAniToBePulling;
 /**
- *  变成普通状态时的动画
+ *  下拉状态变成普通状态 Pulling->Normal
  */
 - (void)refreshViewAniToBeNormal;
 /**

@@ -51,6 +51,11 @@ static char JHRefreshFooterViewKey;
 #pragma mark -
 - (void)addRefreshHeaderViewWithAniViewClass:(Class)aniViewClass beginRefresh:(void (^)())beginRefresh
 {
+    [self addRefreshHeaderViewWithAniViewClass:aniViewClass refreshID:0 beginRefresh:beginRefresh];
+}
+
+- (void)addRefreshHeaderViewWithAniViewClass:(Class)aniViewClass refreshID:(NSInteger)ID beginRefresh:(void (^)())beginRefresh
+{
     assert([aniViewClass isSubclassOfClass:[JHRefreshAniBaseView class]]);
     
     if(!self.header)
@@ -60,6 +65,7 @@ static char JHRefreshFooterViewKey;
         [self addSubview:headerView];
         self.header = headerView;
         headerView.aniView = [[aniViewClass alloc] init];
+        headerView.aniView.refreshViewID = ID;
     }
 }
 

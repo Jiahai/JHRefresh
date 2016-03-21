@@ -75,6 +75,13 @@
             //普通状态
             self.state = JHRefreshStateNormal;
         }
+        else if(self.state == JHRefreshStateNormal && currentOffsetY<0 && currentOffsetY > -10)
+        {
+            if([self.aniView respondsToSelector:@selector(refreshViewBeganPulling)])
+            {
+                [self.aniView refreshViewBeganPulling];
+            }
+        }
     }
     else if (self.state == JHRefreshStatePulling)
     {

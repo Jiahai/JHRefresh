@@ -9,5 +9,7 @@
 #import "JHRefreshBaseView.h"
 
 @interface JHRefreshHeaderView : JHRefreshBaseView
-
+{
+    BOOL        _updatedTimeLabel;
+}
 @end
