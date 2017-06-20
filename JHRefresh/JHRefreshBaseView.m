@@ -83,7 +83,6 @@
         return;
     
     JHRefreshState oldState = _state;
-    _state = state;
     
     switch (oldState) {
         case JHRefreshStateNormal:
@@ -125,6 +124,9 @@
                         break;
                 }
             }
+            else{
+                return;
+            }
         }
             break;
         case JHRefreshStatePulling:
@@ -150,6 +152,8 @@
         }
             break;
     }
+    
+    _state = state;
 }
 
 - (void)endRefreshingWithResult:(JHRefreshResult)result
